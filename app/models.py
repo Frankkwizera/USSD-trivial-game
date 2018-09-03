@@ -5,6 +5,9 @@ from django.db import models
 
 # Create your models here.
 
-class student(models.Model):
+class gamer(models.Model):
     names = models.CharField(max_length=100)
-    email = models.CharField(max_length=30)
+    phone_number = models.IntegerField(unique=True)
+
+    def __str__(self):
+        return self.names + str(self.phone_number)
